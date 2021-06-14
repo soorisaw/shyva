@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+
+	<article class="mt-2">
+							
+		<img src="{{ asset('uploads/' ~ article.picture) }}" class=" article-img" alt="...">
+		
+		<div class="card text-dark mt-2">
+			<div class="card-body">
+				<h1 class="card-title display-6">{{ article.title }}</h1>
+				<h6 class="card-subtitle text-muted">{{ article.lastUpdateDate|date('d/m/Y') }}</h6>
+				<small class="card-subtitle mb-5 text-muted">{% for category in article.categories %} {{ category.label }}{{ loop.last ? '' : ',' }} {% endfor %}</small>
+				<p class="card-text mt-5">{{ article.content }}</p>
+				<a href="/" class="btn mr-2"><i class="fas fa-undo-alt"></i> Retour</a>
+				<a href="#" class="btn "><i class="far fa-heart"></i> like </a>
+			</div>
+		</div>
+		  
+			
+	</article>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+
+        {{ form_start(registrationForm) }}
+            <div class="container-fluid register">
+                <div class="row py-1">
+                    <div class="col-md-3 register-left">
+                        <img src="img/shyvaSd.png" alt="shyva in super deformed style"/>
+                        <h2 class="shyvaFont mb-5">Shyva</h3>
+                        <small><a href="/">Retour</a></small>
+                    </div>
+                    <div class="col-md-9 register-right">
+
+                        <div class="tab-content container-fluid" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Bienvenue</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            {{ form_row(registrationForm.userName, {'attr' : {'placeholder': 'Nom'}} ) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_row(registrationForm.userLastName,{'attr' : {'placeholder': 'Prénom'}} ) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_row(registrationForm.birthday, {'attr' : {'placeholder': 'Date de naissance'}} ) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_row(registrationForm.email, {'attr' : {'placeholder': 'Email'}} ) }}
+                                        </div>
+                                         <div class="form-group">
+                                            {{ form_row(registrationForm.phone, {'attr' : {'placeholder': 'n°de téléphone'}} ) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            {{ form_row(registrationForm.street, {'attr' : {'placeholder': 'Adresse'}} ) }}
+                                        </div>
+                                        <div class="form-group row">
+                                            {{ form_row(registrationForm.numTown, {'attr' : {'placeholder': 'Code postal'}} ) }}
+                                        </div>
+                                         <div class="form-group row">
+                                            {{ form_row(registrationForm.town, {'attr' : {'placeholder': 'Ville'}} ) }}
+                                        </div>
+                                        <div class="form-group">
+                                            <p class='mb-0'>Photo du profil</p>
+                                           {{ form_row(registrationForm.avatar) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_row(registrationForm.plainPassword, {'attr' : {'placeholder': 'Mot de passe'}} ) }}
+                                        </div>
+                                        <button type="submit" class="btn btn-success mt-5">S'inscrire</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{ form_end(registrationForm) }}
+
+
+
+
+{% endblock %}

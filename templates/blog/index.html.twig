@@ -1,0 +1,37 @@
+
+{% extends "base.html.twig" %}
+{% block title %} {{ parent() }} | Accueil {% endblock %}
+
+{% block content %}
+
+	<div class="container">
+		<div class="row mt-2 d-flex justify-content-center">
+			<h1 class="shyvaFont display-3"> Accueil </h1>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row mb-5 mt-1 d-flex justify-content-around">
+			
+		{% for article in articles %}
+
+			<div class="card col-10 col-sm-5 col-lg-3 index-card my-4 mx-1 p-2">
+
+				<img src="{{ asset('uploads/' ~ article.picture) }}" class="card-img-top mb-2" width=300px height=190px>
+
+				<div class="card-body py-1">
+					<h2>
+						<a class="card-title" href="{{ path('article_show', {'id': article.id}) }}">{{ article.title }}</a>
+					</h2>
+				</div>
+				
+				<div class="card-footer">
+					<span class="card-subtitle text-muted date mb-1"> Publié le :<br> {{ article.publicationDate|date('d/m/Y') }}</span>
+				</div>	
+			</div>
+	
+		{% endfor %}
+
+		</div>
+	</div>
+{% endblock %}

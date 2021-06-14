@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Samarkan';
+    src: url('../police/samar/SamarkanNormal.eot');
+    src: url('../police/samar/SamarkanNormal.eot?#iefix') format('embedded-opentype'),
+        url('../police/samar/SamarkanNormal.woff2') format('woff2'),
+        url('../police/samar/SamarkanNormal.woff') format('woff'),
+        url('../police/samar/SamarkanNormal.ttf') format('truetype'),
+        url('../police/samar/SamarkanNormal.svg#SamarkanNormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.shyvaFont {
+
+    font-family: 'Samarkan', Courier New, Courier, monospace;
+}
